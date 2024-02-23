@@ -7,17 +7,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.cc221019.demo_two.ui.views.MainView
+import com.cc221019.demo_two.ui.views.CharacterView
 import com.cc221019.finalproject.data.DatabaseHandler
-import com.cc221019.finalproject.model.MainViewModel
+import com.cc221019.finalproject.model.CharacterViewModel
 import com.cc221019.finalproject.ui.theme.FinalprojectTheme
 
-class MainActivity : ComponentActivity() {
-
+class CharactersActivity : ComponentActivity() {
 
     private val db = DatabaseHandler(this)
-    private val mainViewModel = MainViewModel(db)
-
+    private val characterViewModel = CharacterViewModel(db)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,8 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    mainViewModel.getPlayer();
-                    MainView(mainViewModel)
+                    characterViewModel.getCharacters()
+                    CharacterView(characterViewModel, this)
                 }
             }
         }

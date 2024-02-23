@@ -6,18 +6,19 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.cc221019.demo_two.ui.views.MainView
+import androidx.compose.ui.tooling.preview.Preview
 import com.cc221019.finalproject.data.DatabaseHandler
-import com.cc221019.finalproject.model.MainViewModel
+import com.cc221019.finalproject.model.LoginViewModel
 import com.cc221019.finalproject.ui.theme.FinalprojectTheme
+import com.cc221019.finalproject.ui.views.LoginView
 
-class MainActivity : ComponentActivity() {
-
+class LoginActivity : ComponentActivity() {
 
     private val db = DatabaseHandler(this)
-    private val mainViewModel = MainViewModel(db)
-
+    private val loginViewModel = LoginViewModel(db)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -27,8 +28,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    mainViewModel.getPlayer();
-                    MainView(mainViewModel)
+                    loginViewModel.getPlayers();
+                    LoginView(loginViewModel, this);
                 }
             }
         }

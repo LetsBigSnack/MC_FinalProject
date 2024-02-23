@@ -9,14 +9,16 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.cc221019.demo_two.ui.views.MainView
 import com.cc221019.finalproject.data.DatabaseHandler
+import com.cc221019.finalproject.model.LevelUpViewModel
 import com.cc221019.finalproject.model.MainViewModel
 import com.cc221019.finalproject.ui.theme.FinalprojectTheme
+import com.cc221019.finalproject.ui.views.LevelUpView
 
-class MainActivity : ComponentActivity() {
+class LevelUpActivity : ComponentActivity() {
 
 
     private val db = DatabaseHandler(this)
-    private val mainViewModel = MainViewModel(db)
+    private val levelUpViewModel = LevelUpViewModel(db)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +29,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    mainViewModel.getPlayer();
-                    MainView(mainViewModel)
+                    levelUpViewModel.getPlayer();
+                    levelUpViewModel.levelUp();
+                    LevelUpView(levelUpViewModel, this)
                 }
             }
         }
