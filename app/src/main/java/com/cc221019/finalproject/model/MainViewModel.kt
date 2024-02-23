@@ -36,8 +36,8 @@ class MainViewModel (val db: DatabaseHandler) : ViewModel() {
     }
 
     fun leaveBattle(){
-
         _mainViewState.update { it.copy(battleStarted = false) }
+        _mainViewState.update { it.copy(battleComplete = false) }
     }
 
     fun useAbility(abilityNumber:Int){

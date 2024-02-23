@@ -177,6 +177,7 @@ open class Player (
 
     fun getNewHealth(){
         entityMaxHealth = playerLevel * (playerConstitution) + 10;
+        isAlive = true;
         entityCurrentHealth = entityMaxHealth;
     }
 
