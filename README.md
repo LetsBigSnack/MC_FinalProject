@@ -1,5 +1,4 @@
 # Final Project
-This Kotlin app is designed for Android devices, showcasing [describe the main features or purpose of your app]. The app can be set up for development or testing in two ways: by building from the source code or by directly installing the pre-built APK.
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
