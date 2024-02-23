@@ -34,7 +34,7 @@ After the Gradle build is finished, run the app by clicking on the 'Run' button 
 ### Option 2: Installing the APK
 #### Download the APK
 
-Download the APK which is also located on GitHub `final_project.apk`
+Download the APK which is also located on GitHub `app-debug.apk`
 onto your Android device.
 
 #### Enable Installation from Unknown Sources
